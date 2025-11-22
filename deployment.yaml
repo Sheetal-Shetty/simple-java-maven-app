@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jar
+  labels:
+    app: jar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jar
+  template:
+    metadata:
+      labels:
+        app: jar
+    spec:
+      containers:
+      - name: jar
+        image: sheetalsshetty/jarexam:v1
+        ports:
+        - containerPort: 8080
